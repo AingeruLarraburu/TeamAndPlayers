@@ -1,14 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image } from 'react-native';
+import HeaderView from './componentes/header';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <View style={styles.headerStyle}>
-        <Text style={styles.equipos}>Equipo 1</Text>
-        <Text style={styles.equipos}>Equipo 2</Text>
-        <Text style={styles.equipos}>Equipo 3</Text>
-      </View>
+      <HeaderView></HeaderView>
       <View style={styles.bodyStyle}>
         <View style={styles.asideStyle}>
            <Text style={styles.jugadores}>Jugador 1.1</Text>
