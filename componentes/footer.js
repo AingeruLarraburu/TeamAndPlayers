@@ -1,10 +1,12 @@
 import { StyleSheet, Text, View} from 'react-native';
 
 export default function FooterComponent() {
+  const paginaWeb = "www.jugadores.com"
+  const numeroTelefono = "123456789"
   return (
     <View style={styles.footerStyle}>
-      <Text style={styles.footerItem}>www.jugadores.com</Text>
-      <Text style={styles.footerItem}>123456789</Text>
+      <Text style={styles.footerItem}>{paginaWeb}</Text>
+      <Text style={styles.footerItem}>{numeroTelefono}</Text>
     </View>
   )
 }

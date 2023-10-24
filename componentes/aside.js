@@ -3,13 +3,12 @@ import JugadorComponent from './jugador';
 import PerfilComponent from './perfil';
 
 export default function AsideComponent() {
+  const jugadores = ["Jugador 1.1", "Jugador 1.2", "Jugador 1.3", "Jugador 1.4", "Jugador 1.2", "Jugador 1.3", "Jugador 1.4",]
   return (
     <View style={styles.asideStyle}>
-        <JugadorComponent nombre="Jugador 1.1"></JugadorComponent>
-        <JugadorComponent nombre="Jugador 1.2"></JugadorComponent>
-        <JugadorComponent nombre="Jugador 1.3"></JugadorComponent>
-        <JugadorComponent nombre="Jugador 1.4"></JugadorComponent>
-        <JugadorComponent nombre="Jugador 1.5"></JugadorComponent>
+        {jugadores.map((jugador) => (
+          <JugadorComponent nombre={jugador}></JugadorComponent>
+        ))}
     </View>
   )
 }
