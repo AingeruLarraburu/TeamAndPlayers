@@ -1,10 +1,10 @@
 import { StyleSheet, View, Image, Text } from 'react-native';
 
-export default function PerfilComponent({imId}) {
+export default function PerfilComponent({url}) {
 
   return (
     <View style={styles.jugador}>
-       <Image style={styles.perfil} source={imId} />
+       <Image style={styles.perfil} source={{uri: url}} />
     </View>
   )
 }

@@ -6,8 +6,8 @@ export default function AsideComponent() {
   const jugadores = ["Jugador 1.1", "Jugador 1.2", "Jugador 1.3", "Jugador 1.4", "Jugador 1.2", "Jugador 1.3", "Jugador 1.4",]
   return (
     <View style={styles.asideStyle}>
-        {jugadores.map((jugador) => (
-          <JugadorComponent nombre={jugador}></JugadorComponent>
+        {jugadores.map((jugador, index) => (
+          <JugadorComponent key={index} nombre={jugador}></JugadorComponent>
         ))}
     </View>
   )

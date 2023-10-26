@@ -1,12 +1,13 @@
 import { StyleSheet, Text, View} from 'react-native';
 import EquipoComponent from './equipo';
 
-export default function HeaderView() {
-  const equipos = ["Equipo 1", "Equipo 2", "Equipo 3", "Equipo 4"];
+export default function HeaderView({teams}) {
+  const equipos = teams;
+  console.log(equipos)
   return (
       <View style={styles.headerStyle}>
-        {equipos.map((equipo) => (
-          <EquipoComponent equipo={equipo}></EquipoComponent>
+        {equipos.map((equipo, index) => (
+          <EquipoComponent key={index} equipo={equipo}></EquipoComponent>
         ))}
       </View>
   )
