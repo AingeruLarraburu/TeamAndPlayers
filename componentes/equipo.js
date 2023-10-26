@@ -4,7 +4,7 @@ export default function EquipoComponent({index, equipo, actualTeam, setactualTea
   const cambiarEquipo = () => {
     setactualTeam(index);
   }
-  if (index == actualTeam) {
+/*   if (index == actualTeam) {
     return (
       <TouchableOpacity onPress={cambiarEquipo}><Text style={styles.seleccionado}>{equipo}</Text></TouchableOpacity>
     )
@@ -14,7 +14,10 @@ export default function EquipoComponent({index, equipo, actualTeam, setactualTea
     return (
       <TouchableOpacity onPress={cambiarEquipo}><Text style={styles.equipos}>{equipo}</Text></TouchableOpacity>
     )
-  }
+  } */
+  return (
+    <TouchableOpacity onPress={cambiarEquipo}><Text style={[styles.equipos, index == actualTeam && {backgroundColor: "#FF0000"}]}>{equipo}</Text></TouchableOpacity>
+  )
   
 }
 

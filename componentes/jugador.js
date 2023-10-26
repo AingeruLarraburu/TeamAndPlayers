@@ -4,7 +4,7 @@ export default function JugadorComponent({index,nombre,actualPlayer,setactualPla
   const cambiar = () => {
     setactualPlayer(index)
   }
-  if (index == actualPlayer) {
+/*   if (index == actualPlayer) {
     return (
       <TouchableOpacity onPress={cambiar}><Text style={styles.actual}>{nombre}</Text></TouchableOpacity>
     )
@@ -12,7 +12,10 @@ export default function JugadorComponent({index,nombre,actualPlayer,setactualPla
     return (
       <TouchableOpacity onPress={cambiar}><Text style={styles.jugadores}>{nombre}</Text></TouchableOpacity>
     )
-  }
+  } */
+  return (
+    <TouchableOpacity onPress={cambiar}><Text style={index == actualPlayer ? styles.actual : styles.jugadores}>{nombre}</Text></TouchableOpacity>
+  )
   
 }
 
