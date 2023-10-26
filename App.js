@@ -7,11 +7,15 @@ import { TouchableOpacity } from 'react-native-web';
 import Prueba from './componentes/prueba';
 
 export default function App() {
-  const [clicks, setclicks] = useState(0)
+  //var contador = 0;
+  const [contador, setContador] = useState(0)
+  const cambiar = () => {
+    setContador(contador+1);
+  }
   return (
     <View style={styles.container}>
-      <Text style={styles.texto}>En componente App: {clicks}</Text>
-      <Prueba clicked={clicks} setclicked={setclicks}></Prueba>
+      <Text style={styles.texto}>El numero es: {contador}</Text>
+      <TouchableOpacity onPress={cambiar}><Text>Button</Text></TouchableOpacity>
     </View>
   )
 }
