@@ -1,33 +1,17 @@
-import { StyleSheet, View} from 'react-native';
+import { StyleSheet, View, Text} from 'react-native';
 import HeaderView from './componentes/header';
 import BodyComponent from './componentes/body';
 import FooterComponent from './componentes/footer';
 import { useState } from 'react';
+import { TouchableOpacity } from 'react-native-web';
+import Prueba from './componentes/prueba';
 
 export default function App() {
-  //Configuracion
-  const teamSize = 5;
-  const equipoSize = 3;
-  //Variables
-  const equipos = []
-  var jugadores = []
-  var localjugadores = []
-  
-  for (let i = 1; i <= equipoSize; i++) {
-    equipos.push("Equipo"+i)
-  }
-  for (let i = 1; i <= equipos.length; i++) {
-    localjugadores = []
-    for (let z = 1; z <= teamSize; z++) {
-      localjugadores.push("Jugador_" + i + "." + z);
-    }
-    jugadores.push(localjugadores)
-  }
+  const [clicks, setclicks] = useState(0)
   return (
     <View style={styles.container}>
-      <HeaderView teams={equipos}></HeaderView>
-      <BodyComponent jugadores={jugadores}></BodyComponent>
-      <FooterComponent></FooterComponent>
+      <Text style={styles.texto}>En componente App: {clicks}</Text>
+      <Prueba clicked={clicks} setclicked={setclicks}></Prueba>
     </View>
   )
 }
@@ -37,5 +21,11 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: "#000000",
     flex: 1
+  },
+  texto: {
+    fontSize: 16,
+    borderWidth: 2,
+    borderColor: "#000000",
+    margin: 10,
   }
 });
