@@ -2,12 +2,12 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 import JugadorComponent from './jugador';
 import PerfilComponent from './perfil';
 
-export default function AsideComponent() {
-  const jugadores = ["Jugador 1.1", "Jugador 1.2", "Jugador 1.3", "Jugador 1.4", "Jugador 1.2", "Jugador 1.3", "Jugador 1.4",]
+export default function AsideComponent({players, actualPlayer, setactualPlayer, actualTeam}) {
+  const jugadores = players[actualTeam]
   return (
     <View style={styles.asideStyle}>
         {jugadores.map((jugador, index) => (
-          <JugadorComponent key={index} nombre={jugador}></JugadorComponent>
+          <JugadorComponent key={index} index={index} nombre={jugador} actualPlayer={actualPlayer} setactualPlayer={setactualPlayer} actualTeam={actualTeam}></JugadorComponent>
         ))}
     </View>
   )
