@@ -8,16 +8,34 @@ import Prueba from './componentes/prueba';
 
 export default function App() {
   //var contador = 0;
-  const [contador, setContador] = useState(0)
+  const [perfil, setperfil] = useState("medico")
   const cambiar = () => {
-    setContador(contador+1);
+    if (perfil == "medico") {
+      setperfil("pacience");
+    }else{
+      setperfil("medico");
+    }
   }
-  return (
-    <View style={styles.container}>
-      <Text style={styles.texto}>El numero es: {contador}</Text>
-      <TouchableOpacity onPress={cambiar}><Text>Button</Text></TouchableOpacity>
-    </View>
-  )
+  if (perfil=="medico") {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.texto}>Eres el medico</Text>
+        <TouchableOpacity onPress={cambiar}><Text>Button</Text></TouchableOpacity>
+      </View>
+    )
+  }
+  else{
+    return (
+      <View style={styles.container}>
+        <Text style={styles.texto}>Eres el paciente</Text>
+        <Text style={styles.texto}>Eres el paciente</Text>
+        <Text style={styles.texto}>Eres el paciente</Text>
+        <Text style={styles.texto}>Eres el paciente</Text>
+        <TouchableOpacity onPress={cambiar}><Text>Button</Text></TouchableOpacity>
+      </View>
+    )
+  }
+  
 }
 
 const styles = StyleSheet.create({
