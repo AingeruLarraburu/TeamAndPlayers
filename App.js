@@ -27,7 +27,6 @@ export default function App() {
     jugafotolocal = []
     for (let z = 1; z <= teamSize; z++) {
       localjugadores.push("Jugador_" + i + "." + z);
-      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png"
       jugafotolocal.push("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"+fotocount+".png")
       fotocount++;
     }
