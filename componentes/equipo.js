@@ -1,10 +1,23 @@
-import { StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { useState } from "react";
 
-export default function EquipoComponent({index, equipo, actualTeam, setactualTeam}) {
+export default function EquipoComponent({
+  index,
+  equipo,
+  actualTeam,
+  setactualTeam,
+}) {
+  const [encima, setencima] = useState(false);
   const cambiarEquipo = () => {
     setactualTeam(index);
-  }
-/*   if (index == actualTeam) {
+  };
+  const entrar = () => {
+    setencima(true);
+  };
+  const salir = () => {
+    setencima(false);
+  };
+  /*   if (index == actualTeam) {
     return (
       <TouchableOpacity onPress={cambiarEquipo}><Text style={styles.seleccionado}>{equipo}</Text></TouchableOpacity>
     )
@@ -16,9 +29,22 @@ export default function EquipoComponent({index, equipo, actualTeam, setactualTea
     )
   } */
   return (
-    <TouchableOpacity onPress={cambiarEquipo}><Text style={[styles.equipos, index == actualTeam && {backgroundColor: "#FF0000"}]}>{equipo}</Text></TouchableOpacity>
-  )
-  
+    <TouchableOpacity
+      onPress={cambiarEquipo}
+      onMouseEnter={entrar}
+      onMouseLeave={salir}
+    >
+      <Text
+        style={[
+          styles.equipos,
+          encima == true && { backgroundColor: "#00FF00" },
+          index == actualTeam && { backgroundColor: "#FF0000" },
+        ]}
+      >
+        {equipo}
+      </Text>
+    </TouchableOpacity>
+  );
 }
 
 const styles = StyleSheet.create({
@@ -33,6 +59,6 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: "#000000",
     margin: 10,
-    backgroundColor: "#ff0000"
-  }
+    backgroundColor: "#ff0000",
+  },
 });

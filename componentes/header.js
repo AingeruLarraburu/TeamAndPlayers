@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     padding: 10,
+    borderRadius: 10,
   },
   equipos: {
     fontSize: 16,
